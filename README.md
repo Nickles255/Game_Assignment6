@@ -27,13 +27,13 @@ TicTacToe.java - driver containing the main string
                  No winner
 
 
-Task 1: Build Gameboard.java - Due 10/29 (Sunday)
+Task 1: Build Gameboard.java - Due 10/29 (Sunday) KEN DONE!
         Method to create: GameBoard(), displayBoard()
 
-Task 2: Add to Gameboard.java - Due 11/1 (Wednesday)
+Task 2: Add to Gameboard.java - Due 11/1 (Wednesday)  QD
         Method to create: makeAMove(), isDraw(), isWon(char)
 
-Task 3: Build TicTacToe.java - Due 11/5 (Sunday)
+Task 3: Build TicTacToe.java - Due 11/5 (Sunday) LENA
         Create logic in main to run processs.
 
 Task 4: Testing process - Due 11/7 (Tuesday) EVERYONE
