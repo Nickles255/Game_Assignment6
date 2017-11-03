@@ -27,26 +27,40 @@ System.out.println("------- Testing for Phase 1 Initialize Gameboard--------\n")
 
 System.out.println("\n------- Testing for Phase 2 Methods in Gameboard--------\n");
 // tesing methods in game board.
-/*
-    System.out.println("Testing makeAMove for player1 and player 2\n");
+    
+    Gameboard myGame_p2 = new Gameboard();
+	System.out.println("Testing makeAMove for player1 and player 2\n");
     myGame_p2.makeAMove(player1);
     myGame_p2.displayBoard();
-    
+   
     myGame_p2.makeAMove(player2);
     myGame_p2.displayBoard();
-    System.out.println("\nTesting isDraw for draw situation.\n");
+
+    System.out.println("\nTesting isWon for X \n");
+    System.out.println(myGame_p2.isWon(player1));
+
+	System.out.println("\n");
+    myGame_p2.setMarker(0, 0, 'X');
+    myGame_p2.setMarker(0, 1, 'X');
+    myGame_p2.setMarker(0, 2, 'X');
+    myGame_p2.setMarker(1, 0, 'X');
+    myGame_p2.setMarker(1, 1, 'X');
+    myGame_p2.setMarker(1, 2, 'X');
+    myGame_p2.setMarker(2, 0, 'X');
+    myGame_p2.setMarker(2, 1, 'X');
+    myGame_p2.setMarker(2, 2, 'X');
+   
+    myGame_p2.displayBoard();
+	System.out.println("\nTesting isDraw for draw situation.\n");
     System.out.println(myGame_p2.isDraw());
     
-    System.out.println("\nTesting isWon for X use setMarker to autoset one winning scenario\n");
+    System.out.println("\nTesting isWon for X \n");
     System.out.println(myGame_p2.isWon(player1));
     
-    myGame_p2.setMarker(0, 0, 'X');
-    myGame_p2.setMarker(1, 1, 'X');
-    myGame_p2.setMarker(2, 2, 'X');
     myGame_p2.displayBoard();
     
-    System.out.println(myGame_p2.isWon(player1))
+    
 
-*/
+
     }
 }
