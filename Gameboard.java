@@ -42,5 +42,62 @@ public class Gameboard {
     public void setMarker(int p_row, int p_col, char p_mark){
         board[p_row][p_col] = p_mark;
     };
+    // to initiate player to make a move		
+    public void makeAMove(char player){
+        System.out.println("Enter a row for player" +" "+ player+":");
+        int p_row=scan.nextInt();
+        System.out.println("enter a column for player" +" "+ player+":");       
+        int p_col=scan.nextInt();
+        
+     	while(board[p_row][p_col]!=' '){
+            System.out.println("row is occupied");
+            
+            System.out.println("Enter a row for player" +" "+ player+":");
+             p_row = scan.nextInt();
+               
+            System.out.println("enter a column for player" +" "+ player+":");
+             p_col = scan.nextInt();
+        }
+        setMarker(p_row,p_col,player); 
+    }
+    //determines a win if there is a three in a row
+    public boolean isWon(char player){
+        boolean match = false;
+	//check for win in a row    
+        for(int row=0; row<board.length;row++){
+            if(board[row][0]==player&&board[row][1]==player&&board[row][2]==player){
+                match=true;
+            }
+	    //check for win in a column	
+            if(board[0][row]==player&&board[1][row]==player&&board[2][row]==player){
+                match=true;
+            }
+              
+        }
+ 	   //check for win diagonal		     
+           if(board[0][0]==player&&board[1][1]==player&&board[2][2]==player){
+               match=true;
+           }
+           if(board[2][0]==player&&board[1][1]==player&&board[0][2]==player){
+               match=true;
+           }
+       
+         return match;
+    }
+    //The method to determine if its a draw or not   
+    public  boolean isDraw(){
+        boolean draw = false;
+        if(isWon('x')== false && isWon('o')==false){
+        for(int row = 0; row<board.length;row++){
+            for(int col = 0;col<board[row].length;col++){
+                if(board[row][col]!=' '){
+                    return true;
+                }
+            }
+        }
+    }
+        return draw;
+    }
+
 
 }
