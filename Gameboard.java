@@ -1,12 +1,12 @@
 /**
   * Gameboard.java represents a gameboard to play tic tac toe as a two dimensional array.
-  * 
+  * isDraw is working currently code could be improved. 
   * 
   *
   *
   *  @author(s) Chien Lin, Lena Zheng, Qd Li
-  *  @version 1.0
-  *  @since 2017-10-27 
+  *  @version 1.1Q
+  *  @since 2017-11-03
 */
 
 import java.util.Scanner;
@@ -87,12 +87,11 @@ public class Gameboard {
     //The method to determine if its a draw or not   
     public  boolean isDraw(){
         boolean draw = false;
-        if(isWon('x')== false && isWon('o')==false){
-            for(int row = 0; row<board.length;row++){
-                for(int col = 0;col<board[row].length;col++){
-                    if(board[row][col]!=' '){
-                        return true;
-                    }
+        for(int row = 0; row<board.length;row++){
+            for(int col = 0;col<board[row].length;col++){
+		//if the row and column not empty and there is no winner, there is a draw
+                if(board[row][col]!=' '&&isWon('x')==draw&&isWon('o')){
+                   draw= true;               
                 }
             }
         }
