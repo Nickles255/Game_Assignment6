@@ -90,7 +90,7 @@ public class Gameboard {
         for(int row = 0; row<board.length;row++){
             for(int col = 0;col<board[row].length;col++){
 		//if the row and column not empty and there is no winner, there is a draw
-                if(board[row][col]!=' '&&isWon('x')==draw&&isWon('o')){
+                if(board[row][col] != ' ' && isWon('x') == draw && isWon('o') == draw){
                    draw= true;               
                 }
             }
