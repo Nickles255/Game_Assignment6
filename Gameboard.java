@@ -85,20 +85,25 @@ public class Gameboard {
          return match;
     }
 	
-    //Determines for a draw
     public  boolean isDraw(){
+        //Create a local variable to 
+        //represent the current status of cell in the board
+        int Space = 0;
+        //set a boolean 
         boolean draw = false;
-        //loop to check to see if board is full.
-        for(int row = 0; row<board.length; row++){
-            //to make sure both row and colmun are not empty
-            if(board[row][0] != ' ' && board[row][1] != ' ' && board[row][2] == ' '){
-                if(board[0][row] != ' ' && board[1][row] != ' ' && board[2][row] != ' '){
-                    //to make sure there is no win
-                    if(isWon('X') == draw && isWon('O') == draw){
-                        draw = true;
-                    }
+        //loop through the board to check for occupied space
+        for(int row=0; row<board.length; ++row){
+            for(int col=0;col<board[row].length; col++){
+                //if a cell in the board is empty
+                //Store the information on Space and increment to the next Space
+                if(board[row][col] == ' '){
+                Space++;    
                 }
-            }    
+            }
+            //if the all space is occupiedboard and there is no winner then it's a draw
+            if(Space == 0 && isWon('X') == draw && isWon('O') == draw){
+                draw = true;
+                }
         }
         return draw;
     }
