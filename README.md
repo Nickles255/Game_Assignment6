@@ -30,7 +30,7 @@ TicTacToe.java - driver containing the main string
 Task 1: Build Gameboard.java - Due 10/29 (Sunday) KEN DONE!
         Method to create: GameBoard(), displayBoard()
 
-Task 2: Add to Gameboard.java - Due 11/1 (Wednesday)  QD
+Task 2: Add to Gameboard.java - Due 11/1 (Wednesday)  QD DONE!
         Method to create: makeAMove(), isDraw(), isWon(char)
 
 Task 3: Build TicTacToe.java - Due 11/5 (Sunday) LENA
