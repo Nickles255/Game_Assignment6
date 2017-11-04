@@ -92,7 +92,7 @@ public class Gameboard {
         //set a boolean 
         boolean draw = false;
         //loop through the board to check for occupied space
-        for(int row=0; row<board.length; ++row){
+        for(int row=0; row<board.length; row++){
             for(int col=0;col<board[row].length; col++){
                 //if a cell in the board is empty
                 //Store the information on Space and increment to the next Space
@@ -101,7 +101,7 @@ public class Gameboard {
                 }
             }
             //if the all space is occupiedboard and there is no winner then it's a draw
-            if(Space == 0 && isWon('X') == draw && isWon('O') == draw){
+            if(Space == 0 && isWon('X') == false && isWon('O') == false){
                 draw = true;
                 }
         }
