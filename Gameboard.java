@@ -44,19 +44,19 @@ public class Gameboard {
     };
     // to initiate player to make a move
     public void makeAMove(char player){
-        System.out.println("Enter a row for player" +" "+ player+":");
+        System.out.println("Enter a row for player" + " " + player + ":");
         int p_row=scan.nextInt();
-        System.out.println("enter a column for player" +" "+ player+":");
+        System.out.println("Enter a column for player" + " " + player + ":");
         int p_col=scan.nextInt();
         
-        while(board[p_row][p_col]!=' '){
+        while(board[p_row][p_col] != ' '){
             System.out.println("row is occupied");
             
-            System.out.println("Enter a row for player" +" "+ player+":");
-             p_row = scan.nextInt();
+            System.out.println("Enter a row for player" + " " + player + ":");
+            p_row = scan.nextInt();
                
-            System.out.println("enter a column for player" +" "+ player+":");
-             p_col = scan.nextInt();
+            System.out.println("Enter a column for player" + " " + player + ":");
+            p_col = scan.nextInt();
         }
         setMarker(p_row,p_col,player); 
     }
@@ -64,36 +64,46 @@ public class Gameboard {
     public boolean isWon(char player){
         boolean match = false;
         //check for win in a row    
-        for(int row=0; row<board.length;row++){
-            if(board[row][0]==player&&board[row][1]==player&&board[row][2]==player){
-                match=true;
+        for(int row=0; row<board.length; row++){
+            if(board[row][0] == player && board[row][1] == player && board[row][2] == player){
+                match = true;
             }
-        //check for win in a column	
-            if(board[0][row]==player&&board[1][row]==player&&board[2][row]==player){
-                match=true;
+		
+            //check for win in a column	
+            if(board[0][row] == player && board[1][row] == player && board[2][row] == player){
+                match = true;
             }
               
         }
-        //check for win diagonal		     
-           if(board[0][0]==player&&board[1][1]==player&&board[2][2]==player){
-               match=true;
+           //check for win diagonal		     
+           if(board[0][0] == player && board[1][1] == player && board[2][2] == player){
+               match = true;
            }
-           if(board[2][0]==player&&board[1][1]==player&&board[0][2]==player){
-               match=true;
+           if(board[2][0] == player && board[1][1] == player && board[0][2] == player){
+               match = true;
            }
-
          return match;
     }
-    //The method to determine if its a draw or not   
+	
     public  boolean isDraw(){
+        //Create a local variable to 
+        //represent the current status of cell in the board
+        int Space = 0;
+        //set a boolean 
         boolean draw = false;
-        for(int row = 0; row<board.length;row++){
-            for(int col = 0;col<board[row].length;col++){
-		//if the row and column not empty and there is no winner, there is a draw
-                if(board[row][col]!=' '&&isWon('x')==draw&&isWon('o')){
-                   draw= true;               
+        //loop through the board to check for occupied space
+        for(int row=0; row<board.length; row++){
+            for(int col=0;col<board[row].length; col++){
+                //if a cell in the board is empty
+                //Store the information on Space and increment to the next Space
+                if(board[row][col] == ' '){
+                Space++;    
                 }
             }
+            //if the all space is occupiedboard and there is no winner then it's a draw
+            if(Space == 0 && isWon('X') == false && isWon('O') == false){
+                draw = true;
+                }
         }
         return draw;
     }
