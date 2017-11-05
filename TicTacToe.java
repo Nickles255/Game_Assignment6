@@ -1,44 +1,68 @@
 /**
-  * Play a game of TicTacToe
-  *  @author(s) Chien Lin, Lena Zheng, Qd Li
-  *  @version 1.0
-  *  @since 2017-11-04
-  *  
-  */
+    * Play a game of TicTacToe
+    *  @author(s) Chien Lin, Lena Zheng, Qd Li
+    *  @version 1.0
+    *  @since 2017-11-04
+    *  
+*/
 /**
-  * Algorithm:
-  * 1) A player makes a move
-  * 2) Second player makes a move
-  * 3) If either players win, by getting 3 in a row, the game ends
-  * 4) If nobody wins and the board is full, it is a tie
- */
+    * Algorithm:
+    * 1) A player makes a move
+    * 2) Second player makes a move
+    * 3) If either players win, by getting 3 in a row, the game ends
+    * 4) If nobody wins and the board is full, it is a tie and the game ends
+*/
 
 
+/**
+    * Driver program to play TicTacToe using Gameboard
+    * Each player 'X' and 'O' takes a turn until someone
+    * gets 3 in a row.
+    * if the board is filled up and nobody has won, the game
+    * is a draw.
+*/
 public class TicTacToe {
     public static void main(String[] args){
-        //player[1] is 'X', player[2]is 'O'
+        //player[1] is 'X', player[2] is 'O'
         char[] player = {'X','O'};
         char currentPlayer;
-        int turn = 0; //helps to keep track of which player is playing
-        boolean keepPlaying = true;
+
+        //helps to keep track of whose turn it is
+        int turn = 0; 
+        
+        //checker to see if the game should continue
+        boolean keepPlaying = true; 
         Gameboard game = new Gameboard();
-        game.displayBoard(); //show the board
+        
+        //show the board
+        game.displayBoard(); 
         
         while (keepPlaying){
-            currentPlayer = player[turn % 2]; //if it is an even turn, then player1(X), if odd turn, then player2(O)
-            game.makeAMove(currentPlayer); //ask player to make a move
+            //if it is an even turn, then player0 (X), if odd turn, then player1 (O)
+            currentPlayer = player[turn % 2]; 
+        
+            //ask player to make a move
+            game.makeAMove(currentPlayer); 
+        
+            // if the player won, display the winner and end the game
             if (game.isWon(currentPlayer)){
                 System.out.println(currentPlayer + " player won.");
                 keepPlaying =false;
             }
             else{
+                
+                // if the it is a draw, display the draw and end the game
                 if (game.isDraw()){
                     System.out.println("This game is a draw");
                     keepPlaying =false;
                 }
             }
+            
+            // keep track of the turn
             turn++;
-            game.displayBoard(); //show the board
+
+            //show the board
+            game.displayBoard(); 
         }
     }
 }
