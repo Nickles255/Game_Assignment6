@@ -28,21 +28,21 @@ public class TicTacToe {
         char currentPlayer;
 
         //helps to keep track of whose turn it is
-        int turn = 0; 
+        int turn = 0;
         
         //checker to see if the game should continue
-        boolean keepPlaying = true; 
+        boolean keepPlaying = true;
         Gameboard game = new Gameboard();
         
         //show the board
-        game.displayBoard(); 
+        game.displayBoard();
         
         while (keepPlaying){
             //if it is an even turn, then player0 (X), if odd turn, then player1 (O)
-            currentPlayer = player[turn % 2]; 
+            currentPlayer = player[turn % 2];
         
             //ask player to make a move
-            game.makeAMove(currentPlayer); 
+            game.makeAMove(currentPlayer);
         
             // if the player won, display the winner and end the game
             if (game.isWon(currentPlayer)){
@@ -50,19 +50,19 @@ public class TicTacToe {
                 keepPlaying =false;
             }
             else{
-                
+
                 // if the it is a draw, display the draw and end the game
                 if (game.isDraw()){
                     System.out.println("This game is a draw");
                     keepPlaying =false;
                 }
             }
-            
+
             // keep track of the turn
             turn++;
 
             //show the board
-            game.displayBoard(); 
+            game.displayBoard();
         }
     }
 }

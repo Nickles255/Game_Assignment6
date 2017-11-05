@@ -9,7 +9,6 @@
 */
 
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class Gameboard { 
     final int bSize = 3;
@@ -25,11 +24,11 @@ public class Gameboard {
     }
 
     public void displayBoard(){
-      
+
         System.out.println(dashLine);
         for(int row = 0; row < board.length; row++){
             for (int col = 0; col < board[row].length; col++){
-            System.out.print( "| " + board[row][col] + " ");
+                System.out.print( "| " + board[row][col] + " ");
             }
 
             System.out.println("| \n" + dashLine);
@@ -43,9 +42,9 @@ public class Gameboard {
     };
     // to initiate player to make a move
     public void makeAMove(char player){
-        System.out.println("Enter a row for player" + " " + player + ":");
+        System.out.println("Enter a row for player " + player + ":");
         int p_row=scan.nextInt();
-        System.out.println("Enter a column for player" + " " + player + ":");
+        System.out.println("Enter a column for player " + player + ":");
         int p_col=scan.nextInt();
         
         while(board[p_row][p_col] != ' '){
@@ -62,29 +61,31 @@ public class Gameboard {
     //determines a win if there is a three in a row
     public boolean isWon(char player){
         boolean match = false;
-        //check for win in a row    
+        //check for win in a row
         for(int row=0; row<board.length; row++){
             if(board[row][0] == player && board[row][1] == player && board[row][2] == player){
                 match = true;
             }
-		
+
             //check for win in a column	
             if(board[0][row] == player && board[1][row] == player && board[2][row] == player){
                 match = true;
             }
-              
         }
-           //check for win diagonal		     
-           if(board[0][0] == player && board[1][1] == player && board[2][2] == player){
-               match = true;
-           }
-           if(board[2][0] == player && board[1][1] == player && board[0][2] == player){
-               match = true;
-           }
-         return match;
+
+        //check for win diagonal		     
+        if(board[0][0] == player && board[1][1] == player && board[2][2] == player){
+            match = true;
+        }
+
+        if(board[2][0] == player && board[1][1] == player && board[0][2] == player){
+            match = true;
+        }
+
+        return match;
     }
 
-    public  boolean isDraw(){
+    public boolean isDraw(){
         //Create a local variable to 
         //represent the current status of cell in the board
         int Space = 0;
@@ -103,7 +104,7 @@ public class Gameboard {
     //if the all space is occupiedboard and there is no winner then it's a draw
         if(Space == 0 && isWon('X') == false && isWon('O') == false){
             draw = true;
-        }    
+        }
         return draw;
     }
 
