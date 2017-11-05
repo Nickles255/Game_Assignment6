@@ -1,12 +1,11 @@
 /**
-  * Gameboard.java represents a gameboard to play tic tac toe as a two dimensional array.
-  * isDraw is working currently code could be improved. 
-  * 
-  *
-  *
-  *  @author(s) Chien Lin, Lena Zheng, Qd Li
-  *  @version 1.1Q
-  *  @since 2017-11-03
+    * Gameboard.java represents a gameboard to play tic tac toe as a two dimensional array.
+    *  @author(s) Chien Lin, Lena Zheng, Qd Li
+    *  @version 1.1Q
+    *  @since 2017-11-03
+    *  includes a gameboard initialized with an empty character in each block.
+    *  private fucntion to set marker in a location identified by p_row and p_col
+    *  public functions displayBoard(), makeAMove(char), isWon(char), isDraw()
 */
 
 import java.util.Scanner;
@@ -39,7 +38,7 @@ public class Gameboard {
 
     // Added setMarker to assist with setting character marking p_mark in p_row, p_col
     // of board
-    public void setMarker(int p_row, int p_col, char p_mark){
+    private void setMarker(int p_row, int p_col, char p_mark){
         board[p_row][p_col] = p_mark;
     };
     // to initiate player to make a move
@@ -84,7 +83,7 @@ public class Gameboard {
            }
          return match;
     }
-	
+
     public  boolean isDraw(){
         //Create a local variable to 
         //represent the current status of cell in the board
@@ -97,14 +96,14 @@ public class Gameboard {
                 //if a cell in the board is empty
                 //Store the information on Space and increment to the next Space
                 if(board[row][col] == ' '){
-                Space++;    
+                Space++;
                 }
             }
-            //if the all space is occupiedboard and there is no winner then it's a draw
-            if(Space == 0 && isWon('X') == false && isWon('O') == false){
-                draw = true;
-                }
         }
+    //if the all space is occupiedboard and there is no winner then it's a draw
+        if(Space == 0 && isWon('X') == false && isWon('O') == false){
+            draw = true;
+        }    
         return draw;
     }
 

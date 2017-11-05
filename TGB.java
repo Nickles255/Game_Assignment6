@@ -77,15 +77,15 @@ System.out.println("\n------- Testing for Phase 2 Methods in Gameboard--------\n
 
     
 	System.out.println("\n");
-    myGame_p2.setMarker(0, 0, ' ');
-    myGame_p2.setMarker(0, 1, ' ');
-    myGame_p2.setMarker(0, 2, ' ');
+    myGame_p2.setMarker(0, 0, 'O');
+    myGame_p2.setMarker(0, 1, 'X');
+    myGame_p2.setMarker(0, 2, 'X');
     myGame_p2.setMarker(1, 0, ' ');
     myGame_p2.setMarker(1, 1, ' ');
-    myGame_p2.setMarker(1, 2, 'O');
-    myGame_p2.setMarker(2, 0, 'O');
-    myGame_p2.setMarker(2, 1, 'X');
-    myGame_p2.setMarker(2, 2, 'X');
+    myGame_p2.setMarker(1, 2, ' ');
+    myGame_p2.setMarker(2, 0, ' ');
+    myGame_p2.setMarker(2, 1, ' ');
+    myGame_p2.setMarker(2, 2, ' ');
    
     myGame_p2.displayBoard();
 	System.out.println("\nTesting isDraw for draw situation.\n");
