@@ -100,11 +100,11 @@ public class Gameboard {
                 Space++;    
                 }
             }
-            //if the all space is occupiedboard and there is no winner then it's a draw
-            if(Space == 0 && isWon('X') == false && isWon('O') == false){
-                draw = true;
-                }
         }
+	//if the all space is occupiedboard and there is no winner then it's a draw
+        if(Space == 0 && isWon('X') == false && isWon('O') == false){
+            draw = true;
+        }    
         return draw;
     }
 
