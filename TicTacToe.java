@@ -43,6 +43,7 @@ public class TicTacToe {
         
             //ask player to make a move
             game.makeAMove(currentPlayer);
+            System.out.println();
         
             // if the player won, display the winner and end the game
             if (game.isWon(currentPlayer)){
