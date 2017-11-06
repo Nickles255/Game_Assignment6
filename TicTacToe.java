@@ -34,10 +34,10 @@ public class TicTacToe {
         boolean keepPlaying = true;
         Gameboard game = new Gameboard();
         
-        //show the board
-        game.displayBoard();
         
         while (keepPlaying){
+            //show the board
+            game.displayBoard();
             //if it is an even turn, then player0 (X), if odd turn, then player1 (O)
             currentPlayer = player[turn % 2];
         
@@ -46,6 +46,8 @@ public class TicTacToe {
         
             // if the player won, display the winner and end the game
             if (game.isWon(currentPlayer)){
+                //show the board
+                game.displayBoard();
                 System.out.println(currentPlayer + " player won.");
                 keepPlaying =false;
             }
@@ -53,6 +55,8 @@ public class TicTacToe {
 
                 // if the it is a draw, display the draw and end the game
                 if (game.isDraw()){
+                    //show the board
+                    game.displayBoard();
                     System.out.println("This game is a draw");
                     keepPlaying =false;
                 }
@@ -60,9 +64,6 @@ public class TicTacToe {
 
             // keep track of the turn
             turn++;
-
-            //show the board
-            game.displayBoard();
         }
     }
 }
