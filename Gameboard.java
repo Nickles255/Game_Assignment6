@@ -1,10 +1,10 @@
 /**
     * Gameboard.java represents a gameboard to play tic tac toe as a two dimensional array.
     *  @author(s) Chien Lin, Lena Zheng, Qd Li
-    *  @version 1.1Q
-    *  @since 2017-11-03
+    *  @version 1.3
+    *  @since 2017-11-06
     *  includes a gameboard initialized with an empty character in each block.
-    *  private fucntion to set marker in a location identified by p_row and p_col
+    *  private function to set marker in a location identified by p_row and p_col
     *  public functions displayBoard(), makeAMove(char), isWon(char), isDraw()
 */
 
@@ -42,18 +42,18 @@ public class Gameboard {
     };
     // to initiate player to make a move
     public void makeAMove(char player){
-        System.out.println("Enter a row for player " + player + ":");
+        System.out.print("Enter a row for player " + player + ": ");
         int p_row=scan.nextInt();
-        System.out.println("Enter a column for player " + player + ":");
+        System.out.print("Enter a column for player " + player + ": ");
         int p_col=scan.nextInt();
         
         while(board[p_row][p_col] != ' '){
-            System.out.println("row is occupied");
+            System.out.println("\nrow is occupied\n");
             
-            System.out.println("Enter a row for player" + " " + player + ":");
+            System.out.print("Enter a row for player" + " " + player + ": ");
             p_row = scan.nextInt();
                
-            System.out.println("Enter a column for player" + " " + player + ":");
+            System.out.print("Enter a column for player" + " " + player + ": ");
             p_col = scan.nextInt();
         }
         setMarker(p_row,p_col,player); 
@@ -67,13 +67,13 @@ public class Gameboard {
                 match = true;
             }
 
-            //check for win in a column	
+            //check for win in a column
             if(board[0][row] == player && board[1][row] == player && board[2][row] == player){
                 match = true;
             }
         }
 
-        //check for win diagonal		     
+        //check for win diagonal
         if(board[0][0] == player && board[1][1] == player && board[2][2] == player){
             match = true;
         }

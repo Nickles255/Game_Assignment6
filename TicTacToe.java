@@ -2,7 +2,7 @@
     * Play a game of TicTacToe
     *  @author(s) Chien Lin, Lena Zheng, Qd Li
     *  @version 1.0
-    *  @since 2017-11-04
+    *  @since 2017-11-06 
     *  
 */
 /**
@@ -38,6 +38,7 @@ public class TicTacToe {
         while (keepPlaying){
             //show the board
             game.displayBoard();
+            System.out.println();
             //if it is an even turn, then player0 (X), if odd turn, then player1 (O)
             currentPlayer = player[turn % 2];
         
@@ -49,7 +50,7 @@ public class TicTacToe {
             if (game.isWon(currentPlayer)){
                 //show the board
                 game.displayBoard();
-                System.out.println(currentPlayer + " player won.");
+                System.out.println("\n" + currentPlayer + " player won.");
                 keepPlaying =false;
             }
             else{
@@ -58,7 +59,7 @@ public class TicTacToe {
                 if (game.isDraw()){
                     //show the board
                     game.displayBoard();
-                    System.out.println("This game is a draw");
+                    System.out.println("\nThis game is a draw");
                     keepPlaying =false;
                 }
             }
