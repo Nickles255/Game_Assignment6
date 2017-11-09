@@ -14,8 +14,7 @@ public class Gameboard {
     final int bSize = 3;
     final String dashLine = "--------------";
     private char[][] board = new char[bSize][bSize]; 
-
-    Scanner scan = new Scanner(System.in);
+    private Scanner scan = new Scanner(System.in);
 
     public Gameboard(){
         for(int row = 0; row < board.length; row++)
