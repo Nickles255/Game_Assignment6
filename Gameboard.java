@@ -18,10 +18,11 @@ public class Gameboard {
 
     public Gameboard(){
         for(int row = 0; row < board.length; row++)
-        for (int col = 0; col < board[row].length; col++)
-            board[row][col] = ' ';
+            for (int col = 0; col < board[row].length; col++)
+                board[row][col] = ' ';
     }
 
+    //Show the current board
     public void displayBoard(){
 
         System.out.println(dashLine);
@@ -84,6 +85,7 @@ public class Gameboard {
         return match;
     }
 
+    //checks if any of the board is empty. if there is no winner and the board is full, then true
     public boolean isDraw(){
         //Create a local variable to 
         //represent the current status of cell in the board
@@ -100,7 +102,7 @@ public class Gameboard {
                 }
             }
         }
-    //if the all space is occupiedboard and there is no winner then it's a draw
+        //if the all space is occupiedboard and there is no winner then it's a draw
         if(Space == 0 && isWon('X') == false && isWon('O') == false){
             draw = true;
         }
